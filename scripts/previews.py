@@ -8,9 +8,9 @@ from modules import script_callbacks, shared
 
 previewable_types = ['LORA', 'LoCon', 'Hypernetwork', 'TextualInversion', 'Checkpoint']
 def load_previews():
-    download_missing_previews = shared.opts.data.get('civitai_download_previews', True)
+    download_missing_previews = shared.opts.data.get('civitai_download_previews', False)
     if not download_missing_previews: return
-    nsfw_previews = shared.opts.data.get('civitai_nsfw_previews', True)
+    nsfw_previews = shared.opts.data.get('civitai_nsfw_previews', False)
 
     civitai.log(f"Check resources for missing preview images")
     resources = civitai.load_resource_list()
